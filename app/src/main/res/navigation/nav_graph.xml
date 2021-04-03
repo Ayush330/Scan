@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcome">
+
+    <fragment
+        android:id="@+id/details2"
+        android:name="com.example.myapplication.Details"
+        android:label="Details" >
+        <action
+            android:id="@+id/action_details2_to_generate22"
+            app:destination="@id/generate2" />
+    </fragment>
+    <fragment
+        android:id="@+id/generate2"
+        android:name="com.example.myapplication.generate"
+        android:label="generate"
+        tools:layout="@layout/generate" >
+        <argument
+            android:name="DETAILS"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome"
+        android:name="com.example.myapplication.welcome"
+        android:label="welcome" >
+        <action
+            android:id="@+id/action_welcome_to_details2"
+            app:destination="@id/details2" />
+        <action
+            android:id="@+id/action_welcome_to_barcode"
+            app:destination="@id/barcode" />
+    </fragment>
+    <fragment
+        android:id="@+id/data"
+        android:name="com.example.myapplication.Data"
+        android:label="Data" >
+        <argument
+            android:name="inferred"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_data_to_welcome"
+            app:popUpTo="@id/welcome" />
+        <action
+            android:id="@+id/action_data_pop_including_welcome"
+            app:popUpTo="@id/welcome"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_data_to_welcome2"
+            app:destination="@id/welcome"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@animator/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/barcode"
+        android:name="com.example.myapplication.Barcode"
+        android:label="Barcode" >
+        <action
+            android:id="@+id/action_barcode_to_data"
+            app:destination="@id/data" />
+    </fragment>
+</navigation>

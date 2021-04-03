@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_see">See</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="you_have_denied_camera_access_permanantly_please_go_to_settings_and_give_camera_permission_manually">You have denied camera access permanantly. Please go to settings and give camera permission manually.</string>
+</resources>
